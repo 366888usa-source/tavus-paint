@@ -8,7 +8,7 @@
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: system-ui, -apple-system, sans-serif; color: #1c1c1c; background: #f6f3ee; line-height: 1.45; }
-    header, main { max-width: 880px; margin: 0 auto; padding: 20px 16px; }
+    header, main { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
     h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 8px; }
     .lead { margin: 0 0 16px; color: #333; }
     .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 8px; }
@@ -18,11 +18,15 @@
     ul { padding-left: 1.1rem; }
     li { margin: 6px 0; }
     .area { font-weight: 650; }
-    figure { margin: 14px 0; background: #fff; border-radius: 16px; overflow: hidden; }
-    img { width: 100%; height: auto; display: block; }
+    .gallery { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 18px 0 8px; }
+    @media (min-width: 640px) { .gallery { grid-template-columns: 1fr 1fr; } }
+    figure { margin: 0; background: #fff; border-radius: 16px; overflow: hidden; }
+    figure.wide { grid-column: 1 / -1; }
+    img { width: 100%; height: auto; display: block; aspect-ratio: 3/4; object-fit: cover; }
+    figure.wide img { aspect-ratio: 4/3; }
     figcaption { padding: 10px 12px 12px; font-size: 0.95rem; }
-    footer { max-width: 880px; margin: 0 auto; padding: 8px 16px 24px; color: #555; font-size: 0.95rem; }
-    .ru-block { max-width: 880px; margin: 0 auto 88px; padding: 16px; background: #fff; border-top: 1px solid #e4e0d8; color: #333; }
+    footer { max-width: 960px; margin: 0 auto; padding: 8px 16px 24px; color: #555; font-size: 0.95rem; }
+    .ru-block { max-width: 960px; margin: 0 auto 88px; padding: 16px; background: #fff; border-top: 1px solid #e4e0d8; color: #333; }
     .ru-block h2 { font-size: 1.05rem; margin: 0 0 8px; }
     .ru-block p { margin: 0 0 8px; }
     .bar { position: sticky; bottom: 0; background: #fff; border-top: 1px solid #e4e0d8; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); display: flex; gap: 8px; }
@@ -46,22 +50,64 @@
       <li>Interior ceiling painting</li>
       <li>Wallpaper installation</li>
     </ul>
-    <figure>
-      <img src="img/ceiling.jpg" alt="Painted ceiling with molding, gold trim, and a chandelier" width="1204" height="1600">
-      <figcaption>Ceiling painting.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/wallpaper.jpg" alt="Grey wallpaper with a gold border and a painted ceiling" width="1600" height="1204">
-      <figcaption>Wallpaper installation.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/kids.jpg" alt="Child's room with a map wall and a painted ceiling" width="1600" height="1204">
-      <figcaption>Wall painting.</figcaption>
-    </figure>
-    <figure>
-      <img src="img/gold.jpg" alt="White wall with a gold damask panel and molding" width="1204" height="1600">
-      <figcaption>Wallpaper and wall detail.</figcaption>
-    </figure>
+    <div class="gallery">
+      <figure class="wide">
+        <img src="img/ceiling.jpg" alt="Painted ceiling with molding, gold trim, and a chandelier" width="1204" height="1600" loading="eager">
+        <figcaption>Ceiling painting.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/wallpaper.jpg" alt="Grey wallpaper with a gold border and a painted ceiling" width="1600" height="1204" loading="lazy">
+        <figcaption>Wallpaper installation.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/kids.jpg" alt="Child's room with a map wall and a painted ceiling" width="1600" height="1204" loading="lazy">
+        <figcaption>Wall painting.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/gold.jpg" alt="White wall with a gold damask panel and molding" width="1204" height="1600" loading="lazy">
+        <figcaption>Wallpaper and wall detail.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/hall.jpg" alt="Hallway with damask wallpaper and white molding" width="1204" height="1600" loading="lazy">
+        <figcaption>Hallway wallpaper.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/panel.jpg" alt="Cream damask wallpaper panel with gold molding" width="1204" height="1600" loading="lazy">
+        <figcaption>Wallpaper panels.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/ceiling2.jpg" alt="Tray ceiling with gold molding and chandelier" width="1204" height="1600" loading="lazy">
+        <figcaption>Decorative ceiling.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/cove.jpg" alt="Crown molding and cove lighting on a painted ceiling" width="1600" height="1204" loading="lazy">
+        <figcaption>Crown molding and cove light.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/bluewall.jpg" alt="Blue wall with gold damask pattern and molding" width="1204" height="1600" loading="lazy">
+        <figcaption>Decorative wall finish.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/parlor.jpg" alt="Room with mirrored ceiling panels and wallpaper" width="1600" height="1204" loading="lazy">
+        <figcaption>Ceiling and wallpaper.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/greywall.jpg" alt="Grey damask wallpaper with gold corner trim" width="1200" height="1600" loading="lazy">
+        <figcaption>Wallpaper detail.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/golddetail.jpg" alt="Gold trim on white wall panels and molding" width="1204" height="1600" loading="lazy">
+        <figcaption>Gold trim detail.</figcaption>
+      </figure>
+      <figure>
+        <img src="img/hallway.jpg" alt="Hallway with wallpaper panels and tray ceiling" width="1200" height="1600" loading="lazy">
+        <figcaption>Finished hallway.</figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="img/living.jpg" alt="Living room with wallpaper, molding, and chandelier" width="1600" height="1200" loading="lazy">
+        <figcaption>Living room finish.</figcaption>
+      </figure>
+    </div>
   </main>
   <footer>Call or text for an estimate. TAVUS INC.</footer>
   <section class="ru-block" lang="ru">
