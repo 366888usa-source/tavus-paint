@@ -3,129 +3,264 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Painting and wallpaper — Bronx and Staten Island</title>
-  <meta name="description" content="Interior wall painting, ceiling painting, and wallpaper installation in the Bronx and Staten Island. Call or text for an estimate.">
+  <title>Painting and wallpaper — Bronx, Brooklyn, Staten Island</title>
+  <meta name="description" content="Interior wall painting, ceiling painting, and wallpaper installation in the Bronx, Brooklyn, and Staten Island. Call or text for an estimate.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, sans-serif; color: #1c1c1c; background: #f6f3ee; line-height: 1.45; }
-    header, main { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
-    header {
-      margin: 16px auto;
-      background: #fffdf4;
-      border: 5px solid #e6c200;
-      border-radius: 22px;
-      box-shadow: 0 0 0 7px #fff3b0, 0 10px 28px rgba(80,60,0,.12);
+    :root {
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --paper: #f4efe6;
+      --card: #fffdf8;
+      --line: #e4d9c8;
+      --gold: #8d6a2f;
+      --gold-soft: #c4a36a;
+      --green: #0e6b3c;
+      --green-dark: #0a5230;
     }
-    h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 8px; }
-    .lead { margin: 0 0 16px; color: #333; }
-    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 8px; }
-    a.btn { display: inline-block; text-decoration: none; border-radius: 999px; padding: 14px 18px; font-weight: 700; font-size: 1.05rem; }
-    a.call { background: #0f7a3a; color: #fff; font-size: 1.25rem; box-shadow: 0 0 0 3px #e6c200; }
-    a.text, a.wa { background: #fff; color: #1c1c1c; border: 1px solid #ccc; }
-    ul { padding-left: 1.1rem; }
-    li { margin: 6px 0; }
-    .area { font-weight: 650; }
-    .gallery { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 18px 0 8px; }
-    @media (min-width: 640px) { .gallery { grid-template-columns: 1fr 1fr; } }
-    figure { margin: 0; background: #fff; border-radius: 16px; overflow: hidden; border: 2px solid #e6c200; }
-    figure.wide { grid-column: 1 / -1; }
-    img { width: 100%; height: auto; display: block; aspect-ratio: 3/4; object-fit: cover; }
-    figure.wide img { aspect-ratio: 4/3; }
-    figcaption { padding: 10px 12px 12px; font-size: 0.95rem; }
-    footer { max-width: 960px; margin: 0 auto; padding: 8px 16px 24px; color: #555; font-size: 0.95rem; }
-    .ru-block { max-width: 960px; margin: 0 auto 88px; padding: 16px; background: #fff; border-top: 1px solid #e4e0d8; color: #333; }
-    .ru-block h2 { font-size: 1.05rem; margin: 0 0 8px; }
-    .ru-block p { margin: 0 0 8px; }
-    .bar { position: sticky; bottom: 0; background: #fffdf4; border-top: 4px solid #e6c200; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); display: flex; gap: 8px; }
-    .bar a { flex: 1; text-align: center; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Outfit, system-ui, sans-serif;
+      line-height: 1.5;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 0 8px;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .brand { color: var(--ink); font-weight: 600; }
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      margin: 8px auto 28px;
+      width: min(1080px, calc(100% - 32px));
+      border-radius: 28px;
+      overflow: hidden;
+      background: #1c1915 center/cover no-repeat;
+      background-image: linear-gradient(180deg, rgba(18,14,10,.15), rgba(18,14,10,.72)), url("img/living.jpg");
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-inner { padding: 36px 28px 32px; max-width: 680px; }
+    .eyebrow {
+      margin: 0 0 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--gold-soft);
+    }
+    h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 7vw, 4.6rem);
+      line-height: 0.95;
+      margin: 0 0 14px;
+    }
+    .hero p { margin: 0 0 20px; font-size: 1.05rem; color: rgba(255,255,255,.88); }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-weight: 600;
+      border: 1px solid transparent;
+    }
+    .call { background: var(--green); color: #fff; font-size: 1.08rem; }
+    .call:hover { background: var(--green-dark); }
+    .ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.35); }
+    .services { display: grid; gap: 12px; margin: 8px auto 28px; }
+    @media (min-width: 760px) { .services { grid-template-columns: repeat(3, 1fr); } }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px 20px 20px;
+    }
+    .card span { display: block; color: var(--gold); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+    .card h2 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.8rem; font-weight: 500; margin: 0 0 8px; }
+    .card p { margin: 0; color: var(--muted); }
+    .gallery { display: grid; gap: 12px; margin: 0 auto 28px; }
+    @media (min-width: 760px) {
+      .gallery { grid-template-columns: 1.2fr 1fr 1fr; }
+      .shot.big { grid-row: span 2; }
+    }
+    figure { margin: 0; background: var(--card); border-radius: 18px; overflow: hidden; border: 1px solid var(--line); }
+    figure img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+    .shot.big img { aspect-ratio: 3/4; min-height: 100%; }
+    figcaption { padding: 10px 12px 12px; font-size: 0.92rem; color: var(--muted); }
+    .estimate {
+      margin: 0 auto 28px;
+      background: #1c1915;
+      color: #fff;
+      border-radius: 24px;
+      padding: 28px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .estimate h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 2.2rem; margin: 0 0 6px; }
+    .estimate p { margin: 0; color: rgba(255,255,255,.75); }
+    .ru {
+      margin: 0 auto 110px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 22px 20px;
+    }
+    .ru h2 { font-family: "Cormorant Garamond", Georgia, serif; font-size: 1.8rem; font-weight: 500; margin: 0 0 8px; }
+    .ru p { margin: 0 0 8px; color: var(--muted); }
+    footer { text-align: center; color: var(--muted); font-size: 0.85rem; padding: 0 16px 120px; }
+    .bar {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      display: flex;
+      gap: 8px;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: rgba(255,253,248,.94);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(8px);
+    }
+    .bar a { flex: 1; }
+    .bar .ghost { background: #fff; color: var(--ink); border-color: var(--line); }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Painting and wallpaper</h1>
-    <p class="lead">Interior wall painting, ceiling painting, and wallpaper. Bronx and Staten Island.</p>
-    <div class="actions">
-      <a class="btn call" href="tel:+19297365075">Call (929) 736-5075</a>
-      <a class="btn text" href="sms:+19297365075">Text</a>
-      <a class="btn wa" href="https://wa.me/19297365075">WhatsApp</a>
+  <div class="wrap top">
+    <div class="brand">TAVUS INC</div>
+    <div>Bronx · Brooklyn · Staten Island</div>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Interior only</p>
+      <h1>Painting and wallpaper</h1>
+      <p>Walls, ceilings, and wallpaper hanging for homes in the Bronx, Brooklyn, and Staten Island.</p>
+      <div class="actions">
+        <a class="btn call" href="tel:+19297365075">Call (929) 736-5075</a>
+        <a class="btn ghost" href="sms:+19297365075">Text</a>
+        <a class="btn ghost" href="https://wa.me/19297365075">WhatsApp</a>
+      </div>
     </div>
-  </header>
-  <main>
-    <p class="area">Bronx and Staten Island. Interior only.</p>
-    <ul>
-      <li>Interior wall painting</li>
-      <li>Interior ceiling painting</li>
-      <li>Wallpaper installation</li>
-    </ul>
-    <div class="gallery">
-      <figure class="wide">
-        <img src="img/ceiling.jpg" alt="Painted ceiling with molding, gold trim, and a chandelier" width="1204" height="1600" loading="eager">
-        <figcaption>Ceiling painting.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/wallpaper.jpg" alt="Grey wallpaper with a gold border and a painted ceiling" width="1600" height="1204" loading="lazy">
-        <figcaption>Wallpaper installation.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/kids.jpg" alt="Child's room with a map wall and a painted ceiling" width="1600" height="1204" loading="lazy">
-        <figcaption>Wall painting.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/gold.jpg" alt="White wall with a gold damask panel and molding" width="1204" height="1600" loading="lazy">
-        <figcaption>Wallpaper and wall detail.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/hall.jpg" alt="Hallway with damask wallpaper and white molding" width="1204" height="1600" loading="lazy">
-        <figcaption>Hallway wallpaper.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/panel.jpg" alt="Cream damask wallpaper panel with gold molding" width="1204" height="1600" loading="lazy">
-        <figcaption>Wallpaper panels.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/ceiling2.jpg" alt="Tray ceiling with gold molding and chandelier" width="1204" height="1600" loading="lazy">
-        <figcaption>Decorative ceiling.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/cove.jpg" alt="Crown molding and cove lighting on a painted ceiling" width="1600" height="1204" loading="lazy">
-        <figcaption>Crown molding and cove light.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/bluewall.jpg" alt="Blue wall with gold damask pattern and molding" width="1204" height="1600" loading="lazy">
-        <figcaption>Decorative wall finish.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/parlor.jpg" alt="Room with mirrored ceiling panels and wallpaper" width="1600" height="1204" loading="lazy">
-        <figcaption>Ceiling and wallpaper.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/greywall.jpg" alt="Grey damask wallpaper with gold corner trim" width="1200" height="1600" loading="lazy">
-        <figcaption>Wallpaper detail.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/golddetail.jpg" alt="Gold trim on white wall panels and molding" width="1204" height="1600" loading="lazy">
-        <figcaption>Gold trim detail.</figcaption>
-      </figure>
-      <figure>
-        <img src="img/hallway.jpg" alt="Hallway with wallpaper panels and tray ceiling" width="1200" height="1600" loading="lazy">
-        <figcaption>Finished hallway.</figcaption>
-      </figure>
-      <figure class="wide">
-        <img src="img/living.jpg" alt="Living room with wallpaper, molding, and chandelier" width="1600" height="1200" loading="lazy">
-        <figcaption>Living room finish.</figcaption>
-      </figure>
-    </div>
-  </main>
-  <footer>Call or text for an estimate. TAVUS INC.</footer>
-  <section class="ru-block" lang="ru">
-    <h2>По-русски</h2>
-    <p>Только внутри: покраска стен и потолка, поклейка обоев. Bronx и Staten Island.</p>
-    <p>Звоните или пишите: (929) 736-5075 — звонок, SMS или WhatsApp. Оценка по телефону.</p>
   </section>
+
+  <section class="wrap services">
+    <article class="card">
+      <span>01</span>
+      <h2>Wall painting</h2>
+      <p>Interior rooms, clean lines, and a finished look.</p>
+    </article>
+    <article class="card">
+      <span>02</span>
+      <h2>Ceilings</h2>
+      <p>Ceiling painting, molding, and trim.</p>
+    </article>
+    <article class="card">
+      <span>03</span>
+      <h2>Wallpaper</h2>
+      <p>Wallpaper hanging and panels, measured and neat.</p>
+    </article>
+  </section>
+
+  <section class="wrap gallery">
+    <figure class="shot big">
+      <img src="img/living.jpg" alt="Living room with wallpaper, molding, and a chandelier" width="1600" height="1200">
+      <figcaption>Living room finish</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ceiling.jpg" alt="Painted ceiling with gold trim and a chandelier" width="1204" height="1600">
+      <figcaption>Ceiling painting</figcaption>
+    </figure>
+    <figure>
+      <img src="img/wallpaper.jpg" alt="Grey wallpaper with a gold border" width="1600" height="1204">
+      <figcaption>Wallpaper</figcaption>
+    </figure>
+    <figure>
+      <img src="img/hall.jpg" alt="Hallway with damask wallpaper and white molding" width="1204" height="1600">
+      <figcaption>Hallway wallpaper</figcaption>
+    </figure>
+    <figure>
+      <img src="img/gold.jpg" alt="White wall with a gold damask panel" width="1204" height="1600">
+      <figcaption>Wall detail</figcaption>
+    </figure>
+    <figure>
+      <img src="img/bluewall.jpg" alt="Blue wall with a gold damask pattern" width="1204" height="1600">
+      <figcaption>Decorative wall</figcaption>
+    </figure>
+    <figure>
+      <img src="img/panel.jpg" alt="Cream damask wallpaper panel" width="1204" height="1600">
+      <figcaption>Wallpaper panels</figcaption>
+    </figure>
+    <figure>
+      <img src="img/ceiling2.jpg" alt="Tray ceiling with gold molding" width="1204" height="1600">
+      <figcaption>Decorative ceiling</figcaption>
+    </figure>
+    <figure>
+      <img src="img/cove.jpg" alt="Crown molding and cove lighting" width="1600" height="1204">
+      <figcaption>Crown molding</figcaption>
+    </figure>
+    <figure>
+      <img src="img/parlor.jpg" alt="Room with mirrored ceiling panels and wallpaper" width="1600" height="1204">
+      <figcaption>Ceiling and wallpaper</figcaption>
+    </figure>
+    <figure>
+      <img src="img/hallway.jpg" alt="Finished hallway with wallpaper panels" width="1200" height="1600">
+      <figcaption>Finished hallway</figcaption>
+    </figure>
+    <figure>
+      <img src="img/kids.jpg" alt="Child's room with a painted ceiling" width="1600" height="1204">
+      <figcaption>Wall painting</figcaption>
+    </figure>
+    <figure>
+      <img src="img/greywall.jpg" alt="Grey damask wallpaper with gold trim" width="1200" height="1600">
+      <figcaption>Wallpaper detail</figcaption>
+    </figure>
+    <figure>
+      <img src="img/golddetail.jpg" alt="Gold trim on white wall panels" width="1204" height="1600">
+      <figcaption>Gold trim</figcaption>
+    </figure>
+  </section>
+
+  <section class="wrap estimate">
+    <div>
+      <h2>Call for an estimate</h2>
+      <p>Interior painting and wallpaper. Phone, text, or WhatsApp.</p>
+    </div>
+    <a class="btn call" href="tel:+19297365075">Call (929) 736-5075</a>
+  </section>
+
+  <section class="wrap ru" lang="ru">
+    <h2>По-русски</h2>
+    <p>Только внутри квартиры: покраска стен и потолка, поклейка обоев. Bronx, Brooklyn и Staten Island.</p>
+    <p>Звоните или пишите: (929) 736-5075. Оценка по телефону.</p>
+  </section>
+
+  <footer>TAVUS INC · Interior painting and wallpaper</footer>
+
   <div class="bar">
     <a class="btn call" href="tel:+19297365075">Call</a>
-    <a class="btn text" href="sms:+19297365075">Text</a>
-    <a class="btn wa" href="https://wa.me/19297365075">WhatsApp</a>
+    <a class="btn ghost" href="sms:+19297365075">Text</a>
+    <a class="btn ghost" href="https://wa.me/19297365075">WhatsApp</a>
   </div>
 </body>
 </html>
